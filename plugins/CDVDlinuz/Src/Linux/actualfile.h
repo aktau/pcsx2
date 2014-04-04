@@ -50,6 +50,11 @@
 
 #include <sys/types.h> // off64_t
 
+/* OSX always has 64 bit offsets */
+#ifdef __APPLE__
+typedef off_t off64_t;
+#endif
+
 
 
 

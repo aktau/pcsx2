@@ -33,7 +33,7 @@
 
 #include "PS2Etypes.h"
 
-#ifdef __LINUX__
+#if defined(__LINUX__) || defined(__APPLE__)
 #define CALLBACK
 #else
 #include <windows.h>
