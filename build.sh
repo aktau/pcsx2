@@ -54,17 +54,16 @@ fi
 if [ "$clean_build" = true ]; then
 	echo "Doing a clean build."
     rm -fr build
-	# make clean 2>&1 | tee -a ../install_log.txt 
+	# make clean 2>&1 | tee -a ../install_log.txt
 fi
 
-
+rm -rf build
 mkdir -p build
 cd build
 
-cmake $flags .. 2>&1 | tee -a ../install_log.txt 
+cmake $flags .. 2>&1
 
-CORE=`grep -w -c processor /proc/cpuinfo`
-make -j $CORE 2>&1 | tee -a ../install_log.txt 
-make install 2>&1 | tee -a ../install_log.txt 
+make
+# make install 2>&1 | tee -a ../install_log.txt
 
 cd ..
