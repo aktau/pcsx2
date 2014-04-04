@@ -33,7 +33,7 @@ find_package(JPEG)
 find_package(OpenGL)
 # Tell cmake that we use SDL as a library and not as an application
 set(SDL_BUILDING_LIBRARY TRUE)
-find_package(SDL)
+find_package(SDL2)
 # The requirement of wxWidgets is checked in SelectPcsx2Plugins module
 # Does not require the module (allow to compile non-wx plugins)
 # Force the unicode build (the variable is only supported on cmake 2.8.3 and above)
@@ -128,9 +128,9 @@ if(PORTAUDIO_FOUND)
 	include_directories(${PORTAUDIO_INCLUDE_DIR})
 endif(PORTAUDIO_FOUND)
 
-if(SDL_FOUND)
-	include_directories(${SDL_INCLUDE_DIR})
-endif(SDL_FOUND)
+if(SDL2_FOUND)
+    include_directories(${SDL2_INCLUDE_DIRS})
+endif(SDL2_FOUND)
 
 if(SOUNDTOUCH_FOUND)
 	include_directories(${SOUNDTOUCH_INCLUDE_DIR})

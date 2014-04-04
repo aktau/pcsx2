@@ -110,7 +110,7 @@ include_directories(.  Linux)
 #     endif(GCC_VERSION VERSION_GREATER 4.7)
 # endif()
 
-if(SDL_FOUND)
+if(SDL2_FOUND)
     list(APPEND spu2xSources SndOut_SDL.cpp)
     if(SDL2_API)
         add_definitions(-DSPU2X_SDL2)
